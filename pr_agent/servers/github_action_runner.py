@@ -39,7 +39,7 @@ async def run_action():
     VERTEX_PROJECT = os.environ.get('VERTEX_PROJECT') or os.environ.get('VERTEX.PROJECT')
     VERTEX_LOCATION = os.environ.get('VERTEX_LOCATION') or os.environ.get('VERTEX.LOCATION')
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
-    # get_settings().set("CONFIG.PUBLISH_OUTPUT_PROGRESS", False)
+    get_settings().set("CONFIG.PUBLISH_OUTPUT_PROGRESS", True)
 
     # Check if required environment variables are set
     if not GITHUB_EVENT_NAME:
