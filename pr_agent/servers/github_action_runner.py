@@ -36,8 +36,14 @@ async def run_action():
     GITHUB_EVENT_PATH = os.environ.get('GITHUB_EVENT_PATH')
     OPENAI_KEY = os.environ.get('OPENAI_KEY') or os.environ.get('OPENAI.KEY')
     OPENAI_ORG = os.environ.get('OPENAI_ORG') or os.environ.get('OPENAI.ORG')
-    VERTEX_PROJECT = os.environ.get('VERTEX_PROJECT') or os.environ.get('VERTEX.PROJECT')
-    VERTEX_LOCATION = os.environ.get('VERTEX_LOCATION') or os.environ.get('VERTEX.LOCATION')
+    VERTEX_PROJECT = os.environ.get('VERTEX_PROJECT')
+    if not VERTEX_PROJECT:
+        print("VERTEX_PROJECT not set")
+        return
+    VERTEX_LOCATION = os.environ.get('VERTEX_LOCATION')
+    if not VERTEX_LOCATION:
+        print("VERTEX_LOCATION not set")
+        return
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
     get_settings().set("CONFIG.PUBLISH_OUTPUT_PROGRESS", True)
 
