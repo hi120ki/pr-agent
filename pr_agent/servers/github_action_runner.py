@@ -62,8 +62,10 @@ async def run_action():
         get_settings().set("OPENAI.ORG", OPENAI_ORG)
     if VERTEX_PROJECT:
         get_settings().set("VERTEXAI.VERTEX_PROJECT", VERTEX_PROJECT)
+        print(f"Setting VERTEX_PROJECT to {VERTEX_PROJECT}")
     if VERTEX_LOCATION:
         get_settings().set("VERTEXAI.VERTEX_LOCATION", VERTEX_LOCATION)
+        print(f"Setting VERTEX_LOCATION to {VERTEX_LOCATION}")
     get_settings().set("GITHUB.USER_TOKEN", GITHUB_TOKEN)
     get_settings().set("GITHUB.DEPLOYMENT_TYPE", "user")
     enable_output = get_setting_or_env("GITHUB_ACTION_CONFIG.ENABLE_OUTPUT", True)
