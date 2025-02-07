@@ -41,6 +41,11 @@ async def run_action():
     GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
     # get_settings().set("CONFIG.PUBLISH_OUTPUT_PROGRESS", False)
 
+    if GITHUB_EVENT_NAME:
+        print(f"Setting GITHUB_EVENT_NAME to {GITHUB_EVENT_NAME}")
+    if GITHUB_EVENT_PATH:
+        print(f"Setting GITHUB_EVENT_PATH to {GITHUB_EVENT_PATH}")
+
     # Check if required environment variables are set
     if not GITHUB_EVENT_NAME:
         print("GITHUB_EVENT_NAME not set")
